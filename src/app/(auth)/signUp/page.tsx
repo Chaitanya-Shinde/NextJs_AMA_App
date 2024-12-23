@@ -4,7 +4,7 @@ import {  useForm } from "react-hook-form"
 import * as z from "zod"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { useDebounceValue, useDebounceCallback } from 'usehooks-ts'
+import { useDebounceCallback } from 'usehooks-ts'
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import { signUpSchema } from "@/schemas/signUpSchema"
@@ -41,7 +41,7 @@ const SignUp = () => {
         setUsernameMessage('');
         try {
           const response = await axios.get(`/api/checkUniqueUsername?username=${username}`)
-          let message = response.data.message
+          const message = response.data.message
           setUsernameMessage(message);
         } catch (error) {
           const axiosError = error as AxiosError<ApiResponse>

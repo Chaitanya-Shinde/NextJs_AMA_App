@@ -3,8 +3,6 @@ import React from 'react'
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -50,7 +48,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
                 <CardTitle>{message.content}</CardTitle>
                 <AlertDialog>
                     <AlertDialogTrigger asChild>
-                        <Button variant="destructive"><X className=' w-5 h-5' /></Button>
+                        <Button className=' text-md font-light' variant="destructive">Delete this message<X className=' w-5 h-5' /></Button>
                     </AlertDialogTrigger>
                     <AlertDialogContent>
                         <AlertDialogHeader>

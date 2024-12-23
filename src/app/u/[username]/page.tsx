@@ -25,7 +25,6 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { messageSchema } from '@/schemas/messageSchema';
 import { useToast } from '@/hooks/use-toast';
-import { parse } from 'path';
 
 const specialChar = '||';
 
@@ -43,7 +42,6 @@ export default function SendMessage() {
   const username = params.username;
 
   const {
-    complete,
     completion,
     setCompletion,
     isLoading: isSuggestLoading,

@@ -1,10 +1,8 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 
-export async function POST(request: Request) {			
+export async function POST() {			
 	
 	const google = createGoogleGenerativeAI({
 		apiKey: process.env.GEMINI_API_KEY,
